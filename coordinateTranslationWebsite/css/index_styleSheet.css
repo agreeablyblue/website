@@ -1,0 +1,121 @@
+body {
+
+  background-color: #F5F5F5;
+}
+
+#wrapper{
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 32px;
+
+}
+
+.header1{
+  background-color: #333333;
+  height: 150px;
+  padding: 4px;
+  text-align: center;
+
+}
+
+header h1{
+  text-transform: uppercase;
+  font-size: 55px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: #fff;
+  padding-left: 25px;
+  line-height: 150px;
+  display: inline;
+}
+
+header h1::before{
+  content: "Coordinate ";
+}
+header h1::after{
+  content: "Transformations";
+  color: #508DB9;
+}
+
+
+.antLogo img{
+  position:absolute;
+  left: 90vw;
+  top: 2.2vh;
+}
+
+.translations{
+  color: #508DB9;
+}
+
+.navMenu{
+  padding: 5px 0 5px 0;
+  text-align: center;
+  line-height: 32px;
+  background-color: #508DB9;
+}
+
+ul.navMenu{
+  margin-top: 15px;
+}
+
+.navMenu li{
+  display: inline-block;
+  padding: 0 10px 0 10px;
+  font-size: 20px;
+}
+
+.navMenu a{
+  text-decoration: none;
+  color: #fff;
+  padding: 8px;
+  font-variant: small-caps;
+}
+
+.navMenu a:hover{
+  color: black;
+}
+
+ul li ul.dropDown{
+  display:none;
+  text-align:center;
+  position: absolute;
+  background-color: #508DB9;
+  padding: 0 10px 0 10px;
+
+}
+
+.dropDown a{
+  font-size: 16px;
+
+}
+
+ul li:hover ul.dropDown{
+  display:block;
+
+}
+
+.contentWrapper{
+  margin:0 22vw 0 22vw;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+header h2{
+  color: black;
+  font-weight: 1000;
+  font-size: 30px;
+}
+
+header h3{
+  color: black;
+  font-weight: 1000;
+  font-size: 20px;
+}
+
+.authorP{
+  font-size: 14px;
+}
+
+.designerP{
+  font-size: 14px;
+}

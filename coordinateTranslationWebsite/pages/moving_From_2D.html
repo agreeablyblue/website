@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/moving_From_2D.css">
+  <title>Moving From 2D</title>
+</head>
+
+<body>
+
+
+  <div class="nav-placeholder" id="nav-placeholder"></div>
+
+  <button onclick="topFunction()" id="myBtn" title="Return to Top">&#8593;</button>
+
+  <div class="contentWrapper">
+    <h1 id="introduction">Introduction</h1>
+    <p>In the previous chapter, we discussed Cartesian coordinate frames and frame transforms in 2-D. However, we live in a 3-D world, so we need to understand more complex rotations than what was discussed in the previous chapter. Before jumping
+      into full 3-D rotations, however, let's discuss what our 2-D rotations look like in a 3-D coordinate frame. In 2-D, we have two axes <span class="math inline"><strong>e</strong><sub>1</sub></span> and <span
+        class="math inline"><strong>e</strong><sub>2</sub></span>. If we add a third axis, <span class="math inline"><strong>e</strong><sub>3</sub></span> that is unit length and orthogonal to the first two vectors, then we have a 3-D Cartesian
+      coordinate system. This is visualized in <b>Figure 1 (a)</b>. For notational convenience, the first, second, and third axis in 3-D is commonly referred to as the <span class="math inline"><em>x</em></span>, <span
+        class="math inline"><em>y</em></span>, and <span class="math inline"><em>z</em></span> axes, respectively.</p>
+    <p>Unfortunately, while 2-D rotations can be simply parameterized by a single scalar, 3-D rotations are significantly more complex, leading to a wide variety of possible <em>representations</em> of rotations. In this chapter, we will discuss
+      several different parameterizations of rotation in 3-D. The order in which these representations are introduced is pedagogical (we hope!) but does not convey relative importance or utility.</p>
+    <p>Specifically, we will describe the following representations of rotations in 3-D:</p>
+  <div class="listLinks">
+    <ul>
+      <li>
+        <a href="2D_Subpages/1EulerRotations.html">Euler angles</a>
+      </li>
+      <li>
+        <a href="#">Axis-angle and Rodrigues paramenters</a>
+      </li>
+      <li>
+        <a href="#">Direction Cosine Matrix</a>
+      </li>
+      <li>
+        <a href="#">Quaternions</a>
+      </li>
+      <li>
+        <a href="2D_Subpages/4yawPitchRoll.html">Yaw-Pitch-Roll</a>
+      </li>
+    </ul>
+  </div>
+    <p>Note that there are mappings that exist between any one of these representations and all the others. For the most part, however, we will not be describing the conversions in this set of papers. Instead, we want you to have an intuitive-enough
+      understand of each representation that when you implement a specific conversion (as copied from Wikipedia or some other <i><b>reliable</b></i> source, you can double-check to make sure things are actually equivalent).</p>
+
+    <p>The below example of a 3-D Cartesian coordinate system demonstrates both <b>right-handed</b> and <b>left-handed</b> rotation about the <b>e<sub>3</sub> axis</b>. Each rotation is a 30&#176; change from the original position of the axes.</p>
+
+    <br>
+    <button type="button" class="btnStart" id="btnStart">Play Animation</button>
+    <div class="container" id="container"></div>
+
+    <div class="exampleWrapper">
+      <div class="exampleText" id="exampleText">A 3-D Coordinate System</div>
+    </div>
+
+    <br>
+    <br>
+    <a href="2D_Subpages/1EulerRotations.html" class="next">Next &rarr;</a>
+
+    <br>
+    <br>
+
+    <hr />
+    <br>
+    <br>
+
+  </div>
+
+  <!-- Calls For All ThreeJS Scripts Utilized -->
+  <script src="../../js/three.js"></script>
+  <script src="../../js/MTLLoader.js"></script>
+  <script src="../../js/OBJLoader.js"></script>
+  <script src="../../js/OrbitControls.js"></script>
+  <script src="../../js/TransformControls.js"></script>
+  <!-- End ThreeJS Call -->
+
+  <!-- Script Call For Developer Defined ThreeJS Scene Render -->
+  <script src="../../scripts/rotation_degrees.js"></script>
+  <!-- End Script Call -->
+
+  <!--Navigation bar-->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("nav.html");
+    });
+  </script>
+
+</body>
+
+</html>

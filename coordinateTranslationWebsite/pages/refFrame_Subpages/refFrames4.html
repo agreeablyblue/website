@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/reference_Frames.css">
+  <title>Reference Frames</title>
+</head>
+
+<body>
+
+
+  <div class="nav-placeholder" id="nav-placeholder"></div>
+
+  <div class="contentWrapper">
+
+          <p><a name="toc.3.2">
+                <h2>3.2&nbsp;Handling different coordinate frame axes</h2>
+            When transforming from one coordinate frame to another, we need to understand how the basis vectors are different between the coordinate frames. The mapping of the basis vectors from one reference frame into another is generally referred
+            to as a <i>rotation</i>. In two dimensions (2-d), this is represented by a single rotation angle as shown in Figure 3. To convert a vector from one coordinate frame's set of vectors into another, we use a <i>Given's rotation</i> matrix,
+            defined as:
+
+            <br>
+            <br>
+            <img src="../../images/moveFrom2D/givenRotationMatrix.png" width="243" height="85" alt="Example 1" style="border:2px solid black; display:block; margin-left: auto; margin-right: auto;" />
+            <br>
+
+            This matrix enables the conversion of a vector between two coordinate frames with the same origin. Consider Figure 3 that has three points ({x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>}), all
+            <br>
+            <br>
+            <br>
+            <div class="container" id="container"></div>
+            <br>
+            <br>
+            <br>
+            <img src="../../images/moveFrom2D/report1_example3.png" width="964" height="418" alt="Example 1" style="border:2px solid black; display:block; margin-left: auto; margin-right: auto;" />
+            <br>
+
+            expressed in the m coordinate system. Because θ = 30◦, then rotation matrix going from m to y (denoted C<sub>m</sub><sup>y</sup>) will be:
+            <br>
+            <br>
+            <img src="../../images/moveFrom2D/givenRotationMatrix2.png" width="195" height="108" alt="Example 1" style="border:2px solid black; display:block; margin-left: auto; margin-right: auto;" />
+
+            <br>
+
+            For each point in Figure 3, the location of that point in your coordinate system can be derived by multiplying the rotation matrix and the vector together, yielding:
+            <br>
+            <br>
+          <div class="threeRotationMatrices">
+            <img src="../../images/moveFrom2D/givenRotationMatrix3.png" width="284" height="212" alt="Example 1" style="border:2px solid black; display:inline;" />
+
+            <img src="../../images/moveFrom2D/givenRotationMatrix4.png" width="284" height="212" alt="Example 1" style="border:2px solid black; display:inline;" />
+
+            <img src="../../images/moveFrom2D/givenRotationMatrix5.png" width="284" height="212" alt="Example 1" style="border:2px solid black; display:inline;" />
+            <br>
+            <br>
+          </div>
+
+          <br>
+          Let us consider what some of these numbers mean as observing what happens numerically can give some insight into what a proper rotation does.
+          <ul>
+
+            <li> For <b>x</b><sub>1</sub> and <b>x</b><sub>2</sub>, note what happens to the non-zero components. <b>x</b><sub>1</sub><sup>y</sup> has a negative value while <b>x</b><sub>2</sub><sup>y</sup> has a positive value. Thinking through
+              whether a positive or negative value should replace a zero helps determine which way the axes are rotating and what the corresponding Given's rotation should look like.
+
+            <li> Note that for <b>x</b><sub>1</sub> and <b>x</b><sub>2</sub>, the non-zero term does not change nearly as much as the zero term, while for <b>x</b><sub>3</sub> this does not appear to be as much of a pattern. This is reflective of the
+              fact that differentially, rotations cause movement orthogonal to a vector.
+
+            <li> Note that the output vectors of each rotation are the magnitude as the input vector. Rotations never change the length of a vector, just express them using different axes!
+          </ul>
+
+          <br>
+          <br>
+          <hr />
+          <br>
+
+          <p><a name="toc.3.2.1">
+                <h3>3.2.1&nbsp;Rotation Matrix Properties</h3>
+
+            Note that the Given's rotation matrix has some special properties that we should discuss. Mathematically, the matrix is a <i>special</i> orthonormal matrix, meaning it has the following properties:
+          <ul>
+
+            <li> The transpose of the matrix is also its inverse: C<sup>T</sup> = C<sup>
+                <font face=symbol>-</font>1
+              </sup>
+              </td>
+              <td nowrap align=center>
+                .
+
+            <li> Each row and column of the matrix is unit length
+
+            <li> Each row (column) of the matrix is orthogonal to every other row (column) in the matrix.
+
+            <li> The determinate of the matrix is +1
+          </ul>
+
+          The first property is particularly important as the rotation matrix from one coordinate frame into another frame also gives us the inverse transform. Mathematically:
+
+          <table cellspacing=0 border=0 align=center>
+            <tr>
+              <td nowrap align="center">
+
+                C<sup>y</sup><sub>m</sub> = (C<sup>m</sup><sub>y</sub>)<sup>T</sup>
+              </td>
+              <td nowrap align=center>
+
+              </td>
+            </tr>
+          </table>
+
+          where C<sup>T</sup>
+          </td>
+          <td nowrap align=center>
+            represents the transpose of the matrix. This property means that if you have the matrix to go from one coordinate frame to the other, it is relatively straight-forward to go backwards as well.
+
+            <br>
+            <br>
+
+            <a href="refFrames3.html" class="previous">&larr; Previous</a>
+            <a href="refFrames5.html" class="next">Next &rarr;</a>
+
+            <br>
+            <br>
+            <hr />
+            <br>
+
+
+  </div>
+
+
+  <!--Navigation bar-->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("../nav.html");
+    });
+  </script>
+
+</body>
+
+</html>
